@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -8,9 +7,20 @@
   <link rel="icon" type="image/png" href="favicon.png">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
-    * { box-sizing: border-box; }
-    body { margin: 0; font-family: 'Segoe UI', sans-serif; background-color: #0b0f1a; color: #ffffff; }
-    .section { padding: 60px 20px; position: relative; z-index: 1; }
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #0b0f1a;
+      color: #ffffff;
+    }
+    .section {
+      padding: 60px 20px;
+      position: relative;
+      z-index: 1;
+    }
     .section.hero {
       text-align: center;
       background-image: url('fondo-ia.jpg');
@@ -18,50 +28,136 @@
       background-position: center;
     }
     .section.hero::before {
-      content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(11, 15, 26, 0.8); z-index: -1;
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(11, 15, 26, 0.8);
+      z-index: -1;
     }
-    .title { font-size: 2.5rem; color: #00ffff; margin-bottom: 20px; text-align: center; }
-    .subtitle { font-size: 1.2rem; color: #b0b0b0; margin-bottom: 40px; text-align: center; }
+    .title {
+      font-size: 2.5rem;
+      color: #00ffff;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .subtitle {
+      font-size: 1.2rem;
+      color: #b0b0b0;
+      margin-bottom: 40px;
+      text-align: center;
+    }
     .btn {
-      display: inline-block; background-color: #00ffff; color: #0b0f1a;
-      padding: 15px 30px; border: none; border-radius: 10px;
-      font-size: 1rem; font-weight: bold; cursor: pointer;
-      text-transform: uppercase; text-decoration: none;
+      display: inline-block;
+      background-color: #00ffff;
+      color: #0b0f1a;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 10px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      text-transform: uppercase;
+      text-decoration: none;
     }
-    .btn:hover { background-color: #00cccc; }
-    .hero-img { max-width: 100%; margin-top: 30px; }
+    .btn:hover {
+      background-color: #00cccc;
+    }
+    .hero-img {
+      max-width: 100%;
+      margin-top: 30px;
+    }
     .features, .pricing, .testimonials {
-      max-width: 1000px; margin: 0 auto; padding: 0 10px;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 10px;
     }
     .feature, .testimonial, .plan {
-      background: #131a2b; border-radius: 12px; padding: 20px;
-      margin-bottom: 20px; text-align: center;
+      background: #131a2b;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 20px;
+      text-align: center;
     }
-    .pricing { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
-    .plan { width: 300px; border: 2px solid #00ffff; }
-    .plan h3 { color: #00ffff; }
-    .plan ul { list-style: none; padding: 0; text-align: left; }
-    .plan ul li { margin: 10px 0; color: #cccccc; }
-    .price { font-size: 1.4rem; color: #00ffff; margin: 20px 0; }
-    .testimonial span { color: #00ffff; font-weight: bold; }
+    .pricing {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    .plan {
+      width: 300px;
+      border: 2px solid #00ffff;
+    }
+    .plan h3 {
+      color: #00ffff;
+    }
+    .plan ul {
+      list-style: none;
+      padding: 0;
+      text-align: left;
+    }
+    .plan ul li {
+      margin: 10px 0;
+      color: #cccccc;
+    }
+    .price {
+      font-size: 1.4rem;
+      color: #00ffff;
+      margin: 20px 0;
+    }
+    .testimonial span {
+      color: #00ffff;
+      font-weight: bold;
+    }
     .cta-final {
-      background-color: #131a2b; padding: 60px 30px;
-      margin-top: 60px; border-top: 5px solid #00ffff; text-align: center;
+      background-color: #131a2b;
+      padding: 60px 30px;
+      margin-top: 60px;
+      border-top: 5px solid #00ffff;
+      text-align: center;
     }
-    .cta-final h2 { font-size: 2rem; color: #00ffff; margin-bottom: 20px; }
-    .cta-final p { font-size: 1.1rem; color: #dddddd; margin-bottom: 30px; }
+    .cta-final h2 {
+      font-size: 2rem;
+      color: #00ffff;
+      margin-bottom: 20px;
+    }
+    .cta-final p {
+      font-size: 1.1rem;
+      color: #dddddd;
+      margin-bottom: 30px;
+    }
     footer {
-      background: #0b0f1a; text-align: center;
-      padding: 40px 20px; border-top: 1px solid #222;
+      background: #0b0f1a;
+      text-align: center;
+      padding: 40px 20px;
+      border-top: 1px solid #222;
     }
-    footer p { color: #888; font-size: 0.9rem; }
-    footer a { color: #00ffff; margin: 0 10px; text-decoration: none; }
+    footer p {
+      color: #888;
+      font-size: 0.9rem;
+    }
+    footer a {
+      color: #00ffff;
+      margin: 0 10px;
+      text-decoration: none;
+    }
     @media screen and (max-width: 600px) {
-      .title { font-size: 1.8rem; }
-      .subtitle { font-size: 1rem; }
-      .btn { width: 100%; padding: 12px 0; }
-      .plan { width: 100%; }
+      .title {
+        font-size: 1.8rem;
+      }
+      .subtitle {
+        font-size: 1rem;
+      }
+      .btn {
+        width: 100%;
+        padding: 12px 0;
+      }
+      .plan {
+        width: 100%;
+      }
     }
   </style>
 </head>
@@ -82,5 +178,89 @@
     <a href="#servicios" class="btn">Conoce los planes</a>
     <img src="IA_ATENTA_247.png" alt="Oferta IA" class="hero-img" />
   </section>
+
+  <section class="section" id="beneficios" data-aos="fade-up">
+    <h2 class="title">¿Por qué elegir nuestros asistentes IA?</h2>
+    <div class="features">
+      <div class="feature">
+        <h3 class="title">Atención inmediata 24/7</h3>
+        <p>Responde comentarios y mensajes directos sin descanso, sin necesidad de que estés conectado.</p>
+      </div>
+      <div class="feature">
+        <h3 class="title">Conversaciones naturales</h3>
+        <p>El asistente comprende preguntas y responde de manera humana, creando una experiencia profesional y cercana.</p>
+      </div>
+      <div class="feature">
+        <h3 class="title">Captación de potenciales clientes</h3>
+        <p>Califica automáticamente los leads, guarda sus datos y te ayuda a preparar el cierre de ventas.</p>
+      </div>
+      <div class="feature">
+        <h3 class="title">Automatiza tu marketing</h3>
+        <p>Comparte enlaces, redirige a tus eventos, productos o formularios sin intervención humana.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="servicios" data-aos="fade-up">
+    <h2 class="title">Planes disponibles</h2>
+    <div class="pricing">
+      <div class="plan">
+        <h3>IA Atenta 24/7</h3>
+        <ul>
+          <li>✔ Responde comentarios en Instagram y Facebook</li>
+          <li>✔ Atención por mensajes internos con links personalizados</li>
+          <li>✔ Redirección a eventos, servicios o asesores</li>
+          <li>✔ Disponible 24/7</li>
+        </ul>
+        <p class="price">$2.500.000 COP</p>
+        <p style="color: #aaa; font-size: 0.9rem;">Mantenimiento: $1.500.000 COP/mes</p>
+      </div>
+      <div class="plan">
+        <h3>IA CierraVentas PRO</h3>
+        <ul>
+          <li>✔ Todo lo de IA Atenta 24/7</li>
+          <li>✔ Califica leads automáticamente</li>
+          <li>✔ Guarda datos en Excel</li>
+          <li>✔ Responde en YouTube</li>
+        </ul>
+        <p class="price">$4.500.000 COP</p>
+        <p style="color: #aaa; font-size: 0.9rem;">Mantenimiento: $1.500.000 COP/mes</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="testimonios" data-aos="fade-up">
+    <h2 class="title">Lo que dicen nuestros clientes</h2>
+    <div class="testimonials">
+      <div class="testimonial">
+        <p>"Desde que implementamos IA Atenta 24/7, no hemos perdido una sola oportunidad de contacto con clientes potenciales. ¡Una maravilla!"</p>
+        <span>- Carolina M., Emprendedora digital</span>
+      </div>
+      <div class="testimonial">
+        <p>"Con IA CierraVentas PRO ahora tenemos leads calificados todos los días sin esfuerzo humano. Increíble para ventas."</p>
+        <span>- Juan E., Agencia de marketing</span>
+      </div>
+      <div class="testimonial">
+        <p>"Antes recibíamos cientos de mensajes sin poder responder a tiempo. Hoy nuestra atención es rápida, precisa y automatizada."</p>
+        <span>- Andrea T., Negocio de formación online</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section cta-final" data-aos="fade-up">
+    <h2>¿Listo para automatizar tu atención y captar más clientes?</h2>
+    <p>Agenda una demo personalizada o elige tu plan ahora mismo y deja que la inteligencia artificial trabaje por ti.</p>
+    <a href="https://wa.me/573172409416" class="btn">Agendar una demo</a>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 IAParaNegocios.com • Todos los derechos reservados</p>
+    <div>
+      <a href="https://wa.me/573172409416">WhatsApp</a>
+      <a href="#">Instagram</a>
+      <a href="#">Facebook</a>
+    </div>
+  </footer>
 </body>
 </html>
+
