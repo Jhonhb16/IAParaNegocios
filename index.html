@@ -14,40 +14,49 @@
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
   <link rel="stylesheet" href="https://unpkg.com/swiper@9/swiper-bundle.min.css">
   <style>
-    *{box-sizing:border-box;margin:0;padding:0}
-    body{font-family:'Segoe UI',sans-serif;background:#0b0f1a;color:#fff}
-    .section{padding:60px 20px;position:relative;z-index:1}
-    .hero{background:url('fondo-ia.jpg') center/cover no-repeat;text-align:center}
-    .hero::before{content:"";position:absolute;inset:0;background:rgba(11,15,26,.8);z-index:-1}
-    h1.title{font-size:2.4rem;color:#00ffff;margin-bottom:20px;text-align:center}
-    h2.title{font-size:1.9rem;color:#00ffff;margin-bottom:30px;text-align:center}
-    h3.title{font-size:1.25rem;color:#00ffff;margin-bottom:10px;text-align:center}
-    p.subtitle{font-size:1.05rem;color:#cccccc;margin-bottom:32px;text-align:center}
-    .btn{display:inline-block;background:#00ffff;color:#0b0f1a;padding:14px 28px;border:none;border-radius:10px;font-weight:700;text-transform:uppercase;text-decoration:none;transition:.3s;text-align:center}
-    .btn img{vertical-align:middle;margin-right:8px;height:20px}
-    .btn:hover{background:#00cccc;transform:translateY(-2px)}
-    .hero-img{width:220px;height:auto;display:block;margin:0 auto 28px}
-    .problems,.features,.pricing,.testimonials{max-width:1000px;margin:0 auto;padding:0 10px}
-    .card{background:#131a2b;border-radius:12px;padding:20px;margin-bottom:20px;text-align:center;transition:transform .3s,box-shadow .3s}
-    .card:hover{transform:scale(1.03);box-shadow:0 0 15px #00ffff55}
-    .pricing{display:flex;flex-wrap:wrap;gap:20px;justify-content:center}
-    .plan{width:300px;border:2px solid #00ffff;border-radius:12px;background:#131a2b;padding:20px;transition:transform .3s,box-shadow .3s}
-    .plan:hover{transform:scale(1.03);box-shadow:0 0 15px #00ffff55}
-    .plan h3{color:#00ffff;margin-bottom:10px;text-align:center}
-    .plan ul{list-style:none;padding:0;margin-bottom:10px}
-    .plan ul li{margin:8px 0;color:#ccc}
-    .price{font-size:1.3rem;color:#00ffff;margin:18px 0;text-align:center}
-    .swiper{width:100%;padding-bottom:40px}
-    .swiper-slide{background:#131a2b;border-radius:12px;padding:24px;text-align:center}
-    .swiper-slide p{margin-bottom:10px;color:#ddd}
-    .swiper-slide span{color:#00ffff;font-weight:700}
-    .cta-final{background:#131a2b;padding:55px 30px;margin-top:60px;border-top:5px solid #00ffff;text-align:center}
-    footer{background:#0b0f1a;text-align:center;padding:38px 20px;border-top:1px solid #222}
-    footer p{color:#888;font-size:.9rem;margin-bottom:10px}
-    footer a{color:#00ffff;margin:0 10px;text-decoration:none}
-    .whatsapp-float{position:fixed;right:20px;bottom:20px;z-index:999;background:#25d366;width:55px;height:55px;border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none}
-    .whatsapp-float img{width:30px;height:30px}
-    @media(max-width:600px){h1.title{font-size:1.8rem}h2.title{font-size:1.5rem}.btn{width:100%;padding:13px 0}.plan{width:100%}}
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', sans-serif; background: #0b0f1a; color: #fff; position: relative; }
+    .section { padding: 60px 20px; }
+    .hero { background: url('fondo-ia.jpg') center/cover no-repeat; text-align: center; position: relative; }
+    .hero::before { content: ""; position: absolute; inset: 0; background: rgba(11,15,26,0.8); }
+    h1.title, h2.title, h3.title { text-align: center; color: #00ffff; }
+    h1.title { font-size: 2.4rem; margin-bottom: 20px; }
+    h2.title { font-size: 1.9rem; margin-bottom: 30px; }
+    h3.title { font-size: 1.25rem; margin-bottom: 10px; }
+    p.subtitle { font-size: 1.05rem; color: #cccccc; text-align: center; margin-bottom: 32px; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; background: #00ffff; color: #0b0f1a; padding: 14px 28px; border: none; border-radius: 10px; font-weight: 700; text-transform: uppercase; text-decoration: none; transition: 0.3s; }
+    .btn img { height: 20px; margin-right: 8px; }
+    .btn:hover { background: #00cccc; transform: translateY(-2px); }
+    .hero-img { width: 220px; margin: 0 auto 28px; display: block; }
+    .problems, .features, .pricing, .testimonials { max-width: 1000px; margin: 0 auto; padding: 0 10px; }
+    .card { background: #131a2b; border-radius: 12px; padding: 20px; margin-bottom: 20px; text-align: center; transition: transform 0.3s, box-shadow 0.3s; }
+    .card:hover { transform: scale(1.03); box-shadow: 0 0 15px #00ffff55; }
+    .pricing { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; }
+    .plan { width: 300px; border: 2px solid #00ffff; border-radius: 12px; background: #131a2b; padding: 20px; transition: transform 0.3s, box-shadow 0.3s; }
+    .plan:hover { transform: scale(1.03); box-shadow: 0 0 15px #00ffff55; }
+    .plan h3 { text-align: center; color: #00ffff; margin-bottom: 10px; }
+    .plan ul { list-style: none; padding: 0; margin-bottom: 10px; }
+    .plan ul li { margin: 8px 0; color: #ccc; }
+    .price { font-size: 1.3rem; color: #00ffff; text-align: center; margin: 18px 0; }
+    .swiper { width: 100%; padding-bottom: 40px; }
+    .swiper-slide { background: #131a2b; border-radius: 12px; padding: 24px; text-align: center; }
+    .swiper-slide p { margin-bottom: 10px; color: #ddd; }
+    .swiper-slide span { color: #00ffff; font-weight: 700; }
+    .cta-final { background: #131a2b; padding: 55px 30px; margin-top: 60px; border-top: 5px solid #00ffff; text-align: center; }
+    footer { background: #0b0f1a; text-align: center; padding: 38px 20px; border-top: 1px solid #222; }
+    footer p { color: #888; font-size: 0.9rem; margin-bottom: 10px; }
+    footer a { color: #00ffff; margin: 0 10px; text-decoration: none; }
+    .whatsapp-float, .blueia-float { position: fixed; bottom: 20px; width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 999; }
+    .whatsapp-float { right: 20px; background: #25d366; }
+    .blueia-float { left: 20px; background: #0057ff; }
+    .whatsapp-float img, .blueia-float img { width: 30px; height: 30px; }
+    #blueia-chat-window { position: fixed; left: 20px; bottom: 90px; width: 300px; max-height: 400px; background: #131a2b; border-radius: 10px; display: none; flex-direction: column; box-shadow: 0 0 15px #0057ffaa; overflow: hidden; z-index: 998; }
+    #blueia-chat-header { background: #0057ff; color: #fff; padding: 10px; text-align: center; }
+    #blueia-chat-body { flex: 1; padding: 10px; overflow-y: auto; }
+    #blueia-chat-input { display: flex; border-top: 1px solid #222; }
+    #blueia-chat-input input { flex: 1; padding: 8px; border: none; background: #0b0f1a; color: #fff; }
+    #blueia-chat-input button { background: #0057ff; color: #fff; border: none; padding: 8px 12px; cursor: pointer; }
+    @media(max-width:600px){ .btn { width: 100%; padding: 13px 0; } .plan { width: 100%; } }
   </style>
 </head>
 <body>
@@ -58,13 +67,13 @@
     <h1 class="title">Tu asistente virtual con IA está listo para trabajar por ti</h1>
     <p class="subtitle">Elimina demoras, filtra curiosos y atiende cada cliente en segundos, 24/7.</p>
     <img src="ia_atenta_247.png" alt="IA Atenta" class="hero-img" loading="lazy">
-    <a href="#servicios" class="btn">Conoce los planes</a>
+    <a href="#servicios" class="btn"><img src="whatsapp-icon.png" alt="WhatsApp">Conoce los planes</a>
   </section>
   <section class="section" data-aos="fade-up">
     <h2 class="title">5 problemas que resolvemos hoy mismo</h2>
     <div class="problems">
-      <div class="card"><h3 class="title">Respuestas fuera de horario</h3><p>Atiende mensajes y comentarios mientras duermes: el 80 % de los leads llegan después de las 6 p. m.</p></div>
-      <div class="card"><h3 class="title">Clientes que se enfrían</h3><p>La IA responde en menos de 3 seg, evitando que el prospecto se vaya con tu competencia.</p></div>
+      <div class="card"><h3 class="title">Respuestas fuera de horario</h3><p>Atiende mensajes y comentarios mientras duermes: el 80% llegan después de las 6 p.m.</p></div>
+      <div class="card"><h3 class="title">Clientes que se enfrían</h3><p>La IA responde en menos de 3 seg, evitando que el prospecto se vaya con la competencia.</p></div>
       <div class="card"><h3 class="title">Filtrado de curiosos</h3><p>Califica y separa leads reales de los que solo preguntan precio.</p></div>
       <div class="card"><h3 class="title">Pérdida de oportunidades en redes</h3><p>Captura cada comentario en Instagram, Facebook y YouTube.</p></div>
       <div class="card"><h3 class="title">Saturación del equipo humano</h3><p>Automatiza preguntas repetitivas y deja a tu staff solo las conversaciones de alto valor.</p></div>
@@ -73,59 +82,86 @@
   <section class="section" id="beneficios" data-aos="fade-up">
     <h2 class="title">Beneficios clave en tu negocio</h2>
     <div class="features">
-      <div class="card"><h3 class="title">Atención inmediata 24/7</h3><p>No vuelvas a dejar un comentario o DM sin respuesta.</p></div>
-      <div class="card"><h3 class="title">Conversaciones naturales</h3><p>El asistente responde como un humano, con tono profesional y cercano.</p></div>
-      <div class="card"><h3 class="title">Captación de leads</h3><p>Guarda datos en Excel y envía leads calientes a tu CRM.</p></div>
-      <div class="card"><h3 class="title">Automatiza tu marketing</h3><p>Comparte enlaces, redirige a eventos o formularios.</p></div>
+      <div class="card"><h3 class="title">Atención inmediata 24/7</h3><p>No dejes un DM sin respuesta.</p></div>
+      <div class="card"><h3 class="title">Conversaciones naturales</h3><p>La IA responde como un humano.</p></div>
+      <div class="card"><h3 class="title">Captación de leads</h3><p>Guarda datos y envía leads calientes.</p></div>
+      <div class="card"><h3 class="title">Automatiza tu marketing</h3><p>Comparte enlaces y redirige formularios.</p></div>
     </div>
   </section>
   <section class="section" id="servicios" data-aos="fade-up">
     <h2 class="title">Elige tu plan y empieza hoy</h2>
     <div class="pricing">
-      <div class="plan">
-        <h3>IA Atenta 24/7</h3>
-        <ul><li>✔ Responde comentarios en Instagram y Facebook</li><li>✔ Atiende mensajes con links personalizados</li><li>✔ Redirige a eventos, servicios o asesores</li><li>✔ Disponible 24/7</li></ul>
-        <p class="price">$2.500.000 COP</p>
-        <a href="https://wa.me/573172409416?text=Estoy%20interesado%20en%20el%20plan%20IA%20Atenta%2024%2F7" class="btn" target="_blank" rel="noopener">
-          <img src="whatsapp-icon.png" alt="WhatsApp">Solicitar por WhatsApp
-        </a>
-        <p style="color:#aaa;font-size:.9rem;text-align:center">Mantenimiento: $1.500.000 COP/mes</p>
-      </div>
-      <div class="plan">
-        <h3>IA CierraVentas PRO</h3>
-        <ul><li>✔ Todo lo de IA Atenta 24/7</li><li>✔ Califica leads automáticamente</li><li>✔ Guarda datos en Excel</li><li>✔ Responde en YouTube</li></ul>
-        <p class="price">$4.500.000 COP</p>
-        <a href="https://wa.me/573172409416?text=Estoy%20interesado%20en%20el%20plan%20IA%20CierraVentas%20PRO" class="btn" target="_blank" rel="noopener">
-          <img src="whatsapp-icon.png" alt="WhatsApp">Solicitar por WhatsApp
-        </a>
-        <p style="color:#aaa;font-size:.9rem;text-align:center">Mantenimiento: $1.500.000 COP/mes</p>
-      </div>
+      <div class="plan"><h3>IA Atenta 24/7</h3><ul><li>✔ Responde comentarios en Instagram y Facebook</li><li>✔ Atiende mensajes con links personalizados</li><li>✔ Redirige a eventos y asesores</li><li>✔ Disponible 24/7</li></ul><p class="price">$2.500.000 COP</p><a href="https://wa.me/573172409416?text=Estoy%20interesado%20en%20IA%20Atenta%2024%2F7" class="btn"><img src="whatsapp-icon.png" alt="WhatsApp">Solicitar por WhatsApp</a><p style="color:#aaa;font-size:.9rem;text-align:center">Mantenimiento: $1.500.000 COP/mes</p></div>
+      <div class="plan"><h3>IA CierraVentas PRO</h3><ul><li>✔ Todo lo de IA Atenta 24/7</li><li>✔ Califica leads automáticamente</li><li>✔ Guarda datos en Excel</li><li>✔ Responde en YouTube</li></ul><p class="price">$4.500.000 COP</p><a href="https://wa.me/573172409416?text=Estoy%20interesado%20en%20IA%20CierraVentas%20PRO" class="btn"><img src="whatsapp-icon.png" alt="WhatsApp">Solicitar por WhatsApp</a><p style="color:#aaa;font-size:.9rem;text-align:center">Mantenimiento: $1.500.000 COP/mes</p></div>
     </div>
   </section>
   <section class="section testimonials swiper" data-aos="fade-up">
     <div class="swiper-wrapper">
-      <div class="swiper-slide"><p>"Desde que implementamos IA Atenta 24/7 no hemos perdido una sola oportunidad de contacto."</p><span>- Carolina M.</span></div>
-      <div class="swiper-slide"><p>"Con IA CierraVentas PRO obtenemos leads calificados todos los días sin esfuerzo humano."</p><span>- Juan E.</span></div>
-      <div class="swiper-slide"><p>"La atención es rápida y precisa, mejoramos nuestro CSAT en un 40 %."</p><span>- Andrea T.</span></div>
+      <div class="swiper-slide"><p>"Desde que implementamos IA Atenta 24/7 no perdimos una oportunidad."</p><span>- Carolina M.</span></div>
+      <div class="swiper-slide"><p>"Con PRO tenemos leads calientes sin esfuerzo humano."</p><span>- Juan E.</span></div>
+      <div class="swiper-slide"><p>"Nuestra CSAT subió 40% con la atención automática."</p><span>- Andrea T.</span></div>
     </div>
     <div class="swiper-pagination"></div>
   </section>
   <section class="section cta-final" data-aos="fade-up">
-    <h2 class="title">¿Listo para automatizar tu atención y captar más clientes?</h2>
-    <p class="subtitle">Agenda una demo personalizada y deja que la IA trabaje por ti.</p>
-    <a href="https://wa.me/573172409416" class="btn"><img src="whatsapp-icon.png" alt="WhatsApp">Quiero mi demo ahora</a>
+    <h2 class="title">¿Listo para automatizar tu atención y captar más?</h2><p class="subtitle">Agenda tu demo y deja que BlueIA trabaje por ti.</p><a href="https://wa.me/573172409416" class="btn"><img src="whatsapp-icon.png" alt="WhatsApp">Quiero mi demo ahora</a>
   </section>
   <footer>
     <p>&copy; 2025 IAParaNegocios.com • Todos los derechos reservados</p>
     <div><a href="https://wa.me/573172409416">WhatsApp</a><a href="#">Instagram</a><a href="#">Facebook</a></div>
   </footer>
-  <a href="https://wa.me/573172409416" class="whatsapp-float" target="_blank" rel="noopener"><img src="whatsapp-icon.png" alt="WhatsApp"></a>
+  <div class="whatsapp-float"><img src="whatsapp-icon.png" alt="WhatsApp"></div>
+  <div class="blueia-float" id="blueia-toggle"><img src="blueia-icon.png" alt="BlueIA"></div>
+  <div id="blueia-chat-window">
+    <div id="blueia-chat-header">BlueIA Asesor</div>
+    <div id="blueia-chat-body"></div>
+    <div id="blueia-chat-input">
+      <input type="text" id="blueia-input" placeholder="Escribe aquí...">
+      <button id="blueia-send">Enviar</button>
+    </div>
+  </div>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="https://unpkg.com/swiper@9/swiper-bundle.min.js"></script>
   <script>
-    document.addEventListener('DOMContentLoaded',function(){
-      AOS.init({duration:800,once:true});
-      new Swiper('.swiper',{loop:true,autoplay:{delay:3000,disableOnInteraction:false},pagination:{el:'.swiper-pagination'}});
+    const OPENAI_API_KEY = '';
+    document.addEventListener('DOMContentLoaded', () => {
+      AOS.init({ duration: 800, once: true });
+      new Swiper('.swiper', {
+        loop: true,
+        autoplay: { delay: 3000, disableOnInteraction: false },
+        pagination: { el: '.swiper-pagination', clickable: true }
+      });
+      const toggle = document.getElementById('blueia-toggle');
+      const win = document.getElementById('blueia-chat-window');
+      toggle.onclick = () => {
+        win.style.display = win.style.display === 'flex' ? 'none' : 'flex';
+        if (win.style.display === 'flex') win.style.flexDirection = 'column';
+      };
+      document.getElementById('blueia-send').onclick = async () => {
+        const input = document.getElementById('blueia-input');
+        const text = input.value.trim(); if (!text) return;
+        const bodyEl = document.getElementById('blueia-chat-body');
+        const userDiv = document.createElement('div'); userDiv.textContent = text; bodyEl.appendChild(userDiv);
+        input.value = '';
+        const res = await fetch('https://api.openai.com/v1/chat/completions', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + OPENAI_API_KEY
+          },
+          body: JSON.stringify({
+            model: 'gpt-4o-mini',
+            messages: [
+              { role: 'system', content: 'Eres BlueIA, un asistente de ventas.' },
+              { role: 'user', content: text }
+            ]
+          })
+        });
+        const data = await res.json();
+        const reply = data.choices[0].message.content;
+        const botDiv = document.createElement('div'); botDiv.textContent = reply; bodyEl.appendChild(botDiv);
+        bodyEl.scrollTop = bodyEl.scrollHeight;
+      };
     });
   </script>
 </body>
