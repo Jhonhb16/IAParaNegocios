@@ -59,6 +59,25 @@
     #blueia-chat-input input { flex: 1; padding: 8px; border: none; background: #0b0f1a; color: #fff; }
     #blueia-chat-input button { background: #0057ff; color: #fff; border: none; padding: 8px 12px; cursor: pointer; }
     @media(max-width:600px){ .btn{width:100%;padding:13px 0} .plan{width:100%} }
+    .problemas-fondo {
+  background: url('./problemas-fondo.jpg') center/cover no-repeat;
+  position: relative;
+  z-index: 1;
+}
+
+.problemas-fondo::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(11, 15, 26, 0.75); /* oscurece para que el texto se lea bien */
+  z-index: 2;
+}
+
+.problemas-fondo .problems {
+  position: relative;
+  z-index: 3;
+}
+
   </style>
 </head>
 <body>
@@ -75,7 +94,7 @@
     </div>
   </section>
 
-  <section class="section" data-aos="fade-up">
+  <section class="section problemas-fondo" data-aos="fade-up">
     <h2 class="title">5 problemas que resolvemos hoy mismo</h2>
     <div class="problems">
       <div class="card"><h3 class="title">Respuestas fuera de horario</h3><p>Atiende mensajes y comentarios mientras duermes: el 80% llegan después de las 6 p.m.</p></div>
