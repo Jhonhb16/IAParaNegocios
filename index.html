@@ -134,7 +134,7 @@
         <li>✔ Siempre activa, siempre lista</li>
       </ul>
       <p class="price">$2.500.000 COP</p>
-      <a href="https://wa.me/573172409416?text=Estoy%20interesado%20en%20IA%20Atenta%2024%2F7" class="btn">Solicitar por WhatsApp</a>
+      <a href="https://wa.me/573171165383?text=Estoy%20interesado%20en%20IA%20Atenta%2024%2F7" class="btn">Solicitar por WhatsApp</a>
       <p class="note">Mantenimiento: $1.500.000 COP/mes</p>
     </div>
 
@@ -153,7 +153,7 @@
         <li>✔ Actualización mensual con mejoras en la lógica de respuesta</li>
       </ul>
       <p class="price">$4.500.000 COP</p>
-      <a href="https://wa.me/573172409416?text=Estoy%20interesado%20en%20IA%20CierraVentas%20PRO" class="btn">Solicitar por WhatsApp</a>
+      <a href="https://wa.me/573171165383?text=Estoy%20interesado%20en%20IA%20CierraVentas%20PRO" class="btn">Solicitar por WhatsApp</a>
       <p class="note">Mantenimiento: $1.500.000 COP/mes</p>
     </div>
 
@@ -172,7 +172,7 @@
   <section class="section cta-final" data-aos="fade-up">
     <h2 class="title">¿Listo para automatizar tu atención y captar más?</h2>
     <p class="subtitle">Agenda tu demo y deja que BlueIA trabaje por ti.</p>
-    <a href="https://wa.me/573172409416" class="btn"><img src="whatsapp-icon.png" alt="WhatsApp">Quiero mi demo ahora</a>
+    <a href="https://wa.me/573171165383" class="btn"><img src="whatsapp-icon.png" alt="WhatsApp">Quiero mi demo ahora</a>
   </section>
 
   <footer>
@@ -180,35 +180,6 @@
     <div><a href="#">Instagram</a><a href="#">Facebook</a></div>
   </footer>
 
-  <div class="blueia-widget" id="blueia-toggle">
-    <div class="blueia-bubble">¿Te puedo ayudar?</div>
-    <img src="ia-figure.png" alt="BlueIA figura">
-  </div>
-  <div id="blueia-chat-window">
-    <div id="blueia-chat-header">BlueIA Asesor</div>
-    <div id="blueia-chat-body"></div>
-    <div id="blueia-chat-input"><input type="text" id="blueia-input" placeholder="Escribe aquí..."><button id="blueia-send">Enviar</button></div>
-  </div>
-
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script src="https://unpkg.com/swiper@9/swiper-bundle.min.js"></script>
-  <script>
-    const OPENAI_API_KEY = '<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>';
-    document.addEventListener('DOMContentLoaded', ()=>{
-      AOS.init({duration:800,once:true});
-      new Swiper('.swiper',{loop:true,autoplay:{delay:3000,disableOnInteraction:false},pagination:{el:'.swiper-pagination',clickable:true}});
-      const toggle=document.getElementById('blueia-toggle');
-      const win=document.getElementById('blueia-chat-window');
-      if(toggle&&win){toggle.onclick=()=>{win.style.display=win.style.display==='flex'?'none':'flex';win.style.flexDirection='column';}};
-      const sendBtn=document.getElementById('blueia-send');
-      if(sendBtn){sendBtn.onclick=async()=>{
-        const input=document.getElementById('blueia-input');const text=input.value.trim();if(!text)return;
-        const bodyEl=document.getElementById('blueia-chat-body');const userDiv=document.createElement('div');userDiv.textContent=text;userDiv.style.color='#00ffff';bodyEl.appendChild(userDiv);input.value='';
-        try{const res=await fetch('https://api.openai.com/v1/chat/completions',{method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+OPENAI_API_KEY},body:JSON.stringify({model:'gpt-3.5-turbo',messages:[{role:'system',content:'Eres BlueIA, un asesor comercial especializado en ventas persuasivas.'},{role:'user',content:text}]})});
-        const data=await res.json();const reply=data.choices[0].message.content;const botDiv=document.createElement('div');botDiv.textContent=reply;botDiv.style.color='#fff';bodyEl.appendChild(botDiv);bodyEl.scrollTop=bodyEl.scrollHeight;
-        }catch(error){const errDiv=document.createElement('div');errDiv.textContent='Error al conectar con BlueIA.';errDiv.style.color='#ff6666';bodyEl.appendChild(errDiv);} };
-      }
-    });
-  </script>
+ 
 </body>
 </html>
