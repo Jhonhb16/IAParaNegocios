@@ -5,9 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Agenda tu sesión estratégica | Escaladeventas.site x IAParaNegocios</title>
   <meta name="description" content="Reserva tu sesión estratégica personalizada para dueños de empresas y gerentes que buscan resultados reales en ventas y automatización digital.">
+  <!-- TailwindCSS CDN -->
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.3/dist/tailwind.min.css" rel="stylesheet">
+  <!-- LottiePlayer -->
   <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
   <style>
+    body {
+      background: linear-gradient(135deg, #0f2027 0%, #203a43 40%, #2c5364 100%);
+      min-height: 100vh;
+      font-family: 'sans-serif';
+    }
     /* Animación suave para la entrada de bloques */
     .fade-in {
       opacity: 0;
@@ -22,14 +29,15 @@
     }
   </style>
 </head>
-<body class="bg-gradient-to-br from-[#0f2027] via-[#203a43] to-[#2c5364] min-h-screen flex flex-col font-sans">
+<body class="min-h-screen flex flex-col font-sans">
 
   <!-- Header dual logo -->
   <header class="w-full px-4 py-5 flex justify-between items-center bg-white bg-opacity-10 backdrop-blur rounded-b-3xl shadow-lg">
     <div class="flex items-center gap-4">
-      <img src="https://escaladeventas.site/logo.png" alt="Escaladeventas Logo" class="h-10 w-auto rounded-xl shadow" />
+      <!-- AJUSTA las rutas de los logos si lo necesitas -->
+      <img src="https://escaladeventas.site/logo.png" alt="Escaladeventas Logo" class="h-10 w-auto rounded-xl shadow" onerror="this.src='https://placehold.co/120x40?text=Logo+1'"/>
       <span class="text-white text-2xl font-bold">x</span>
-      <img src="https://iaparanegocios.com/logo.png" alt="IAParaNegocios Logo" class="h-10 w-auto rounded-xl shadow" />
+      <img src="https://iaparanegocios.com/logo.png" alt="IAParaNegocios Logo" class="h-10 w-auto rounded-xl shadow" onerror="this.src='https://placehold.co/120x40?text=Logo+2'"/>
     </div>
     <a href="#formulario" class="bg-blue-600 hover:bg-blue-800 transition text-white px-6 py-2 rounded-2xl shadow-lg font-bold animate-pulse">
       Agenda tu sesión
@@ -155,7 +163,7 @@
       e.preventDefault();
       const data = Object.fromEntries(new FormData(form).entries());
       // URL del Web App de Google Apps Script
-      const scriptURL = https://script.google.com/macros/s/AKfycbztf4vqvX6a-74RtG6BT7Y7ClsrG_GgdvttIgU-F31724PsLYL74JMKNKB9Ay7xm69W-Q/exec; // <-- Cambia esto por tu URL
+      const scriptURL = 'TU_URL_WEBAPP_SCRIPT'; // <-- Cambia esto por tu URL pública
       try {
         await fetch(scriptURL, { method: 'POST', body: JSON.stringify(data), headers: {'Content-Type': 'application/json'} });
         form.classList.add('hidden');
